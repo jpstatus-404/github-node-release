@@ -2,7 +2,7 @@
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 jobs:
   build:
 
@@ -14,3 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Github workspace
+        run: |
+          echo ${{ github.workspace }}
+          echo $GITHUB_WORKSPACE
