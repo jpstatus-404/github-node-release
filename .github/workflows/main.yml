@@ -1,0 +1,16 @@
+---
+
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ 14, 16, 18 ]
+    name: Node ${{ matrix.ndoe }} sample
+    steps:
+      - uses: actions/checkout@v3
+      - name: Github workspace
